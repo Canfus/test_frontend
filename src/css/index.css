@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --primary-color: #ba3232;
+  --primary-hover-color: #d63b3b;
+  --primary-active-color: #751f1f;
+
+  --white-color: #fefefe;
+  --black-color: #151515;
+
+  --disabled-bg-color: #ccc;
+  --disabled-font-color: #686565;
+}
