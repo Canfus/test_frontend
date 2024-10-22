@@ -1,0 +1,38 @@
+.input__wrapper {
+  width: 100%;
+}
+
+.input__label {
+  margin-inline: 8px;
+
+  font-size: clamp(10px, 2vw, 12px);
+  font-weight: 400;
+}
+
+.input__label--disabled {
+  color: var(--disabled-font-color);
+}
+
+.input {
+  all: unset;
+
+  width: 100%;
+
+  padding: 6px 8px;
+
+  border-bottom: 1px solid var(--gray-color);
+
+  transition: border-bottom-color 150ms;
+}
+
+.input:not(:disabled):focus {
+  border-bottom-color: var(--black-color);
+}
+
+.input:disabled, .input:read-only {
+  border-bottom-color: var(--disabled-bg-color);
+}
+
+.input--invalid {
+  border-bottom-color: var(--danger-color);
+}
