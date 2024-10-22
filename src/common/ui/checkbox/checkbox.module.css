@@ -1,0 +1,36 @@
+.checkbox {
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+
+  background-color: var(--white-color);
+
+  transition: background-color 150ms;
+}
+
+.checkbox:not(:disabled) {
+  cursor: pointer;
+}
+
+.checkbox:not(:disabled):hover {
+  border-color: var(--black-color);
+}
+
+.checkbox[data-state="checked"] {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox__label {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  column-gap: 8px;
+
+  font-size: clamp(12px, 2vw, 16px);
+}
