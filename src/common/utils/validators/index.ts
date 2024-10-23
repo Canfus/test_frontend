@@ -50,4 +50,5 @@ export const validators = {
         }
       })
       .default(null),
+  getBooleanValidationSchema: () => z.boolean().default(false),
 };
