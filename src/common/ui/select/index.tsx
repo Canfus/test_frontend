@@ -5,6 +5,8 @@ import {
   ListboxOption,
 } from "@headlessui/react";
 
+import { ArrowDownIcon } from "@app/common";
+
 import type { SelectProps } from "./select.interface";
 import styles from "./select.module.css";
 
@@ -41,6 +43,12 @@ export const Select = <T = {},>({
             ].join(" ")}
           >
             {label}
+            <ArrowDownIcon
+              className={[
+                styles.trigger__icon,
+                open ? styles["trigger__icon--open"] : undefined,
+              ].join(" ")}
+            />
           </ListboxButton>
           <ListboxOptions
             as="ul"

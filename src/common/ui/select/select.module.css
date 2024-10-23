@@ -23,6 +23,14 @@
   border-bottom-color: var(--danger-color);
 }
 
+.trigger__icon {
+  transition: rotate 150ms;
+}
+
+.trigger__icon--open {
+  rotate: 180deg;
+}
+
 .select__list_items {
   width: var(--button-width);
   max-height: 200px;
