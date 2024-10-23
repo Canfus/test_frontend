@@ -83,6 +83,7 @@ export const App = () => {
           name="group"
           options={groupOptions}
           label="Группа клиентов"
+          multiple
         />
         <SelectField
           control={control}

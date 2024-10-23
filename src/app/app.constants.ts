@@ -61,7 +61,7 @@ export const defaultValues: Schema = {
   birth_date: "",
   phone_number: "",
   sex: null,
-  group: null,
+  group: [],
   doctor: null,
   message_allowed: false,
 };
