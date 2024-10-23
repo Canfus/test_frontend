@@ -1,10 +1,24 @@
 import { useState } from "react";
+
+import { useNotification } from "@app/common";
+
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const { callNotification } = useNotification();
+
+  const onButtonClick = () => {
+    setCount((prev) => prev + 1);
+
+    callNotification({
+      type: "error",
+      content: `Count is ${count}`,
+    });
+  };
 
   return (
     <>
@@ -18,9 +32,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <button onClick={onButtonClick}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

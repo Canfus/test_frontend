@@ -10,4 +10,12 @@ export class TypeGuards {
   static isNull(value: unknown): value is null {
     return value === null;
   }
+
+  static isUndefined(value: unknown): value is undefined {
+    return value === undefined && typeof value === "undefined";
+  }
+
+  static isNil(value: unknown): value is boolean {
+    return this.isNull(value) || this.isUndefined(value);
+  }
 }
