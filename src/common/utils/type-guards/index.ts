@@ -1,13 +1,13 @@
 export class TypeGuards {
-  public static isString(value: unknown): value is string {
+  static isString(value: unknown): value is string {
     return typeof value === "string";
   }
 
-  static isNumber(value: unknown): value is number {
-    return typeof value === "number";
+  static isStringEmpty(value: unknown): boolean {
+    return this.isString(value) && !value.length;
   }
 
-  static isArray(value: unknown): value is unknown[] {
-    return Array.isArray(value);
+  static isNull(value: unknown): value is null {
+    return value === null;
   }
 }
