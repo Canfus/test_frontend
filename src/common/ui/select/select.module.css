@@ -1,18 +1,25 @@
 .select__trigger {
-  all: unset;
-
   width: 100%;
-  min-width: 300px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px;
+  padding: 1px 4px 2px 8px;
 
+  background-color: var(--white-color);
+
+  border: none;
   border-bottom: 1px solid var(--gray-color);
 
   transition: border-bottom-color 150ms;
+}
+
+.trigger__label {
+  margin-inline: 8px;
+
+  font-size: clamp(10px, 2vw, 12px);
+  font-weight: 400;
 }
 
 .select__trigger--open {

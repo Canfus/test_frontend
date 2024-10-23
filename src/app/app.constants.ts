@@ -1,5 +1,7 @@
 import type { SelectOption } from "@app/common";
 
+import type { Schema } from "./app.interface";
+
 export const groupOptions: SelectOption[] = [
   {
     id: 0,
@@ -53,3 +55,13 @@ export const sexOptions: SelectOption[] = [
     label: "Женский",
   },
 ];
+
+export const defaultValues: Schema = {
+  full_name: "",
+  birth_date: "",
+  phone_number: "",
+  sex: null,
+  group: null,
+  doctor: null,
+  message_allowed: false,
+};

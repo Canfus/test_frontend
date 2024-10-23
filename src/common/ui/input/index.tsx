@@ -8,9 +8,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     <div className={[styles.input__wrapper, className].join(" ")}>
       <label
         htmlFor={id}
-        className={[styles.input__label, styles["input__label--disabled"]].join(
-          " ",
-        )}
+        className={[
+          styles.input__label,
+          disabled ? styles["input__label--disabled"] : undefined,
+        ].join(" ")}
       >
         {label}
       </label>
@@ -29,3 +30,5 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ),
 );
 Input.displayName = "Input";
+
+export type { InputProps };

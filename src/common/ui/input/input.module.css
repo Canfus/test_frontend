@@ -14,13 +14,15 @@
 }
 
 .input {
-  all: unset;
-
   width: 100%;
 
   padding: 6px 8px;
 
+  border: none;
+  outline: none;
   border-bottom: 1px solid var(--gray-color);
+
+  background-color: var(--white-color);
 
   transition: border-bottom-color 150ms;
 }

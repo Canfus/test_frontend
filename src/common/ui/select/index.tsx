@@ -17,6 +17,7 @@ export const Select = <T = {},>({
   invalid,
   disabled,
   placeholder,
+  label,
   className,
   reset,
   ...props
@@ -26,30 +27,33 @@ export const Select = <T = {},>({
       const selectedOption = options.find((option) =>
         returnValue ? returnValue(option) === value : option.value === value,
       );
-      const label = selectedOption
+      const diplayLabel = selectedOption
         ? displayValue
           ? displayValue(selectedOption)
           : selectedOption.label
-        : placeholder;
+        : "Выберите значение";
 
       return (
         <>
-          <ListboxButton
-            className={[
-              styles.select__trigger,
-              open ? styles["select__trigger--open"] : undefined,
-              invalid ? styles["select__trigger--invalid"] : undefined,
-              className,
-            ].join(" ")}
-          >
-            {label}
-            <ArrowDownIcon
+          <div className={styles.select__trigger_wrapper}>
+            <span className={styles.trigger__label}>{label}</span>
+            <ListboxButton
               className={[
-                styles.trigger__icon,
-                open ? styles["trigger__icon--open"] : undefined,
+                styles.select__trigger,
+                open ? styles["select__trigger--open"] : undefined,
+                invalid ? styles["select__trigger--invalid"] : undefined,
+                className,
               ].join(" ")}
-            />
-          </ListboxButton>
+            >
+              {diplayLabel}
+              <ArrowDownIcon
+                className={[
+                  styles.trigger__icon,
+                  open ? styles["trigger__icon--open"] : undefined,
+                ].join(" ")}
+              />
+            </ListboxButton>
+          </div>
           <ListboxOptions
             as="ul"
             className={styles.select__list_items}
@@ -86,4 +90,4 @@ export const Select = <T = {},>({
   </Listbox>
 );
 
-export type { SelectOption } from "./select.interface";
+export type { SelectProps, SelectOption } from "./select.interface";

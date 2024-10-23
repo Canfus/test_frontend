@@ -10,7 +10,8 @@ export type SelectOption<T = any> = {
 
 export interface SelectProps<T> extends Omit<ListboxProps, "value"> {
   options: SelectOption<T>[];
-  placeholder: string;
+  placeholder?: string;
+  label: string;
   displayValue?: (option: SelectOption<T>) => string;
   returnValue?: (option: SelectOption<T>) => string;
   invalid?: boolean;

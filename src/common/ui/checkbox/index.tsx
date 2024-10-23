@@ -13,3 +13,5 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
   ),
 );
 Checkbox.displayName = "Checkbox";
+
+export type { CheckboxProps } from "./checkbox.interface";

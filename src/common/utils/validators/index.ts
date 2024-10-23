@@ -50,5 +50,7 @@ export const validators = {
         }
       })
       .default(null),
+  getSelectMultipleRequiredValidationSchema: () =>
+    z.array(validators.getSelectRequiredValidationSchema()),
   getBooleanValidationSchema: () => z.boolean().default(false),
 };

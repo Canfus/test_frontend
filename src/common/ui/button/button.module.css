@@ -6,6 +6,8 @@
   font-size: clamp(12px, 2vw, 16px);
   font-weight: 400;
 
+  text-align: center;
+
   background-color: var(--primary-color);
   color: var(--white-color);
 
@@ -18,7 +20,7 @@
   cursor: pointer;
 }
 
-.button:not(:disabled):hover {
+.button:not(:disabled):hover, .button:not(:disabled):focus {
   background-color: var(--primary-hover-color);
 }
 
