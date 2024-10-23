@@ -1,0 +1,34 @@
+.autocomplete__list_items {
+  width: var(--input-width);
+  max-height: 200px;
+
+  overflow-y: auto;
+
+  list-style: none;
+
+  border: 1px solid var(--gray-color);
+
+  background-color: var(--white-color);
+}
+
+.autocomplete__list_item {
+  position: relative;
+
+  width: 100%;
+
+  padding: 8px;
+}
+
+.autocomplete__list_item[data-focus] {
+  background-color: #efefef;
+}
+
+.autocomplete__list_item[data-disabled] {
+  opacity: 0.5;
+}
+
+.autocomplete__list_item[data-selected] {
+  font-weight: 700;
+
+  color: var(--primary-color);
+}

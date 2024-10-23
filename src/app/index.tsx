@@ -9,7 +9,9 @@ import {
   SelectField,
   CheckboxField,
   Button,
+  AutocompleteField,
 } from "@app/common";
+import { useSuggestPeopleQuery } from "@app/api";
 
 import { schema } from "./app.schema";
 import type { Schema } from "./app.interface";
@@ -20,6 +22,7 @@ import {
   sexOptions,
 } from "./app.constants";
 import styles from "./app.module.css";
+import { PeopleSuggest } from "../api";
 
 export const App = () => {
   const { callNotification } = useNotification();
@@ -53,11 +56,17 @@ export const App = () => {
         onSubmit={handleSubmit(onSuccessSubmit, onRejectSubmit)}
         className={styles.form}
       >
-        <TextField
+        <AutocompleteField<PeopleSuggest, Schema>
           control={control}
           name="full_name"
-          label="ФИО"
+          query={useSuggestPeopleQuery}
+          formatter={(option, index) => ({
+            id: index,
+            value: option.value || "",
+            label: option.value || "",
+          })}
           placeholder="Иванов Иван Иванович"
+          label="ФИО"
         />
         <TextField
           control={control}
