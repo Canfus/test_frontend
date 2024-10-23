@@ -39,7 +39,7 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {},
-  args: { options, placeholder: "Select value" },
+  args: { options, placeholder: "Select value", label: "Test" },
 } satisfies Meta<typeof Select>;
 
 export default meta;
