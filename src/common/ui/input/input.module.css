@@ -13,6 +13,10 @@
   color: var(--disabled-font-color);
 }
 
+.input__label--required {
+  color: var(--danger-color);
+}
+
 .input {
   width: 100%;
 

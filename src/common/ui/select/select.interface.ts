@@ -18,4 +18,5 @@ export interface SelectProps<T> extends Omit<ListboxProps, "value"> {
   invalid?: boolean;
   reset?: string;
   className?: string;
+  required?: boolean;
 }

@@ -20,6 +20,7 @@ export const Select = <T = {},>({
   value,
   label,
   className,
+  required,
   reset,
   ...props
 }: SelectProps<T>) => (
@@ -59,7 +60,12 @@ export const Select = <T = {},>({
       return (
         <>
           <div className={styles.select__trigger_wrapper}>
-            <span className={styles.trigger__label}>{label}</span>
+            <span className={styles.trigger__label}>
+              {label}
+              {required && (
+                <span className={styles["trigger__label--required"]}> *</span>
+              )}
+            </span>
             <ListboxButton
               className={[
                 styles.select__trigger,

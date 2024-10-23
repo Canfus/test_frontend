@@ -22,6 +22,10 @@
   font-weight: 400;
 }
 
+.trigger__label--required {
+  color: var(--danger-color);
+}
+
 .select__trigger--open {
   border-bottom-color: var(--primary-color);
 }

@@ -4,7 +4,19 @@ import type { InputProps } from "./input.interface";
 import styles from "./input.module.css";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, invalid, placeholder, label, id, disabled, ...props }, ref) => (
+  (
+    {
+      className,
+      invalid,
+      placeholder,
+      label,
+      id,
+      disabled,
+      required,
+      ...props
+    },
+    ref,
+  ) => (
     <div className={[styles.input__wrapper, className].join(" ")}>
       <label
         htmlFor={id}
@@ -14,6 +26,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         ].join(" ")}
       >
         {label}
+        {required && (
+          <span className={styles["input__label--required"]}> *</span>
+        )}
       </label>
       <input
         {...props}

@@ -67,6 +67,7 @@ export const App = () => {
           })}
           placeholder="Иванов Иван Иванович"
           label="ФИО"
+          required
         />
         <TextField
           control={control}
@@ -74,12 +75,14 @@ export const App = () => {
           type="date"
           label="Дата рождения"
           placeholder="08/08/1995"
+          required
         />
         <TextField
           control={control}
           name="phone_number"
           label="Номер телефона"
           placeholder="+79999999999"
+          required
         />
         <SelectField
           control={control}
@@ -93,6 +96,7 @@ export const App = () => {
           options={groupOptions}
           label="Группа клиентов"
           multiple
+          required
         />
         <SelectField
           control={control}
