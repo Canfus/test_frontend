@@ -18,4 +18,12 @@ export class TypeGuards {
   static isNil(value: unknown): value is boolean {
     return this.isNull(value) || this.isUndefined(value);
   }
+
+  static isArray(value: unknown): value is unknown[] {
+    return Array.isArray(value);
+  }
+
+  static isArrayEmpty(value: unknown): boolean {
+    return this.isArray(value) && !value.length;
+  }
 }

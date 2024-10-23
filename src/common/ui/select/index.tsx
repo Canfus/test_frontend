@@ -5,7 +5,7 @@ import {
   ListboxOption,
 } from "@headlessui/react";
 
-import { ArrowDownIcon } from "@app/common";
+import { ArrowDownIcon, TypeGuards } from "@app/common";
 
 import type { SelectProps } from "./select.interface";
 import styles from "./select.module.css";
@@ -17,21 +17,44 @@ export const Select = <T = {},>({
   invalid,
   disabled,
   placeholder,
+  value,
   label,
   className,
   reset,
   ...props
 }: SelectProps<T>) => (
   <Listbox {...props} disabled={disabled}>
-    {({ value, open }) => {
-      const selectedOption = options.find((option) =>
-        returnValue ? returnValue(option) === value : option.value === value,
-      );
-      const diplayLabel = selectedOption
-        ? displayValue
-          ? displayValue(selectedOption)
-          : selectedOption.label
-        : "Выберите значение";
+    {({ open }) => {
+      const displayLabel = (() => {
+        if (TypeGuards.isArray(value)) {
+          const selectedOptions = options.filter((option) => {
+            const optionValue = returnValue
+              ? returnValue(option)
+              : option.value;
+
+            return value.includes(optionValue);
+          });
+
+          return !TypeGuards.isArrayEmpty(selectedOptions)
+            ? selectedOptions
+                .map((option) =>
+                  displayValue ? displayValue(option) : option.label,
+                )
+                .join(", ")
+            : "Выберите из списка";
+        } else {
+          const selectedOption = options.find((option) =>
+            returnValue
+              ? returnValue(option) === value
+              : option.value === value,
+          );
+          return selectedOption
+            ? displayValue
+              ? displayValue(selectedOption)
+              : selectedOption.label
+            : "Выберите из списка";
+        }
+      })();
 
       return (
         <>
@@ -45,7 +68,7 @@ export const Select = <T = {},>({
                 className,
               ].join(" ")}
             >
-              {diplayLabel}
+              {displayLabel}
               <ArrowDownIcon
                 className={[
                   styles.trigger__icon,
