@@ -36,6 +36,7 @@ export const Select = <T = {},>({
             className={[
               styles.select__trigger,
               open ? styles["select__trigger--open"] : undefined,
+              invalid ? styles["select__trigger--invalid"] : undefined,
               className,
             ].join(" ")}
           >

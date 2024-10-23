@@ -19,6 +19,10 @@
   border-bottom-color: var(--primary-color);
 }
 
+.select__trigger--invalid {
+  border-bottom-color: var(--danger-color);
+}
+
 .select__list_items {
   width: var(--button-width);
   max-height: 200px;
@@ -28,6 +32,8 @@
   list-style: none;
 
   border: 1px solid var(--gray-color);
+
+  background-color: var(--white-color);
 }
 
 .select__list_item {

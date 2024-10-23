@@ -56,3 +56,9 @@ export const PrimaryMultiple: Story = {
     multiple: true,
   },
 };
+
+export const PrimaryInvalid: Story = {
+  args: {
+    invalid: true,
+  },
+};
